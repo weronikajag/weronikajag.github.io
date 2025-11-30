@@ -1,0 +1,122 @@
+/* Minimal overrides while using Bootstrap */
+
+:root {
+	--accent: #2a9ca8; /* sea-teal accent */
+	--accent-dark: #1f6f73;
+}
+
+/* Global box-sizing and base styles */
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+	margin: 0;
+	color: #111;
+	background: linear-gradient(180deg, #fbfdfd 0%, #ffffff 100%);
+}
+
+/* Navbar / branding tweaks */
+.navbar-brand {
+	font-weight: 700;
+	color: #06333a;
+}
+
+/* Use CSS variable for navbar background so it can be themed centrally */
+.navbar {
+	background: linear-gradient(90deg,var(--accent),var(--accent-dark)) !important;
+}
+
+/* Ensure navbar links are readable on the accent background */
+.navbar .nav-link,
+.navbar .navbar-brand {
+	color: #ffffff;
+}
+
+.navbar .nav-link:hover {
+	color: rgba(255,255,255,0.9);
+}
+
+/* Brand style: gentle seaside feel */
+.navbar-brand {
+	font-family: 'Georgia', serif;
+	font-size: 1.25rem;
+	letter-spacing: 0.5px;
+	text-transform: none;
+}
+
+
+/* Site footer */
+.site-footer {
+	text-align: center;
+	background: #f7fafb;
+	padding: 1.25rem 0;
+	margin-top: 2rem;
+	border-top: 1px solid rgba(15,23,42,0.04);
+}
+
+/* Topbar and header tweaks */
+.topbar { font-size: 0.85rem; }
+.site-header .tagline { color: #4b6b6d; font-size: 0.95rem; margin-top: 0.25rem; }
+
+/* Hero */
+.hero {
+	background: linear-gradient(180deg, rgba(42,156,168,0.06), rgba(42,156,168,0.02));
+	padding: 3.5rem 0;
+	margin-bottom: 1.5rem;
+}
+.hero .lead { font-size: 1.05rem; color: #17393b; }
+
+.product-grid {
+	/* switch to flexbox for a more natural, flowing layout */
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+	align-items: stretch;
+}
+.product-card {
+	background: #fff;
+	border: 1px solid rgba(0,0,0,0.04);
+	padding: 1rem;
+	border-radius: 10px;
+	box-shadow: 0 6px 18px rgba(11,22,30,0.03);
+	/* flex sizing: grow and shrink, with a sensible base */
+	flex: 1 1 220px;
+	max-width: 320px;
+	display: flex;
+	flex-direction: column;
+}
+.product-card img { width: 100%; height: 200px; object-fit: cover; border-radius: 6px; }
+.product-card h4 { font-size: 1rem; margin-top: 0.75rem; }
+.product-card .price { color: var(--accent-dark); font-weight: 700; margin-top: auto; }
+
+/* Small flex helpers */
+.flex-center { display:flex; align-items:center; justify-content:center; }
+.flex-col { display:flex; flex-direction:column; }
+
+/* Hero inner as flex container */
+.hero-inner { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:1rem; }
+
+/* Footer columns */
+.site-footer .wrap { display:flex; justify-content:space-between; gap:1rem; align-items:center; max-width:1100px; margin:0 auto; padding:0 1rem; }
+.site-footer p { margin:0; }
+
+/* Post card */
+.post {
+	background: #f7f7f7;
+	padding: 0.75rem;
+	border-radius: 6px;
+}
+
+/* Logo link */
+.logo a {
+	color: inherit;
+	text-decoration: none;
+}
+
+/* Small utilities */
+.content section + section {
+	margin-top: 1rem;
+}
+
